@@ -21,6 +21,19 @@ START WITH 2
 INCREMENT BY 2
 CACHE 20;
 
+CREATE TABLE t1 (
+  id          NUMBER DEFAULT seq_by_one.NEXTVAL,
+  description VARCHAR2(30)
+);
+
+CREATE TABLE t2 (
+  id          NUMBER DEFAULT seq_by_one.NEXTVAL,
+  description VARCHAR2(30)
+);
+
+
+
+
 -- 
 -- TABLE: AREA_INTERES 
 --
