@@ -1,7 +1,7 @@
 -- @Autores: López Santibáñez Jiménez, Luis Gerardo
 --          Silva García, Carlos Sebastián
 -- Fecha de creación: 09/06/2018
--- Descripción: Crea todas las tablas necesarias para el proyecto, así como sus secuencias.
+-- Descripción: Crea todas las tablas necesarias para el proyecto.
 
 
 CREATE SEQUENCE seq_by_two
