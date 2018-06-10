@@ -15,11 +15,11 @@ CREATE TABLE emp_load
       ACCESS PARAMETERS
         (RECORDS DELIMITED BY NEWLINE
          FIELDS (employee_number      CHAR(2),
-                 employee_dob         CHAR(20),
-                 employee_last_name   CHAR(18),
-                 employee_first_name  CHAR(11),
-                 employee_middle_name CHAR(11),
-                 employee_hire_date   CHAR(10) date_format DATE mask "mm/dd/yyyy"
+                 employee_dob         CHAR(21),
+                 employee_last_name   CHAR(19),
+                 employee_first_name  CHAR(12),
+                 employee_middle_name CHAR(12),
+                 employee_hire_date   CHAR(11) date_format DATE mask "mm/dd/yyyy"
                 )
         )
       LOCATION ('info.dat')
