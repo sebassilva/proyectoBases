@@ -2,7 +2,7 @@
 -- // sqlldr db_user/db_pwd@db_tnsname data=data.csv control=load_data.ctl log=load_data.log bad=load_data_badfile.csv
 --
 
-PTIONS (
+OPTIONS (
   SKIP=1,
   ROWS=1000,
   PARALLEL=true,
@@ -11,7 +11,7 @@ PTIONS (
 )
 LOAD DATA
 APPEND
-INTO TABLE MY_TABLE 
+INTO external TABLE external_data 
         FIELDS TERMINATED BY ","
 	OPTIONALLY ENCLOSED BY '"' 
         TRAILING NULLCOLS
