@@ -11,7 +11,7 @@ CREATE TABLE emp_load
        employee_hire_date   DATE)
     ORGANIZATION EXTERNAL
       (TYPE ORACLE_LOADER
-      DEFAULT DIRECTORY def_dir1
+      DEFAULT DIRECTORY ext_tab_dir
       ACCESS PARAMETERS
         (RECORDS DELIMITED BY NEWLINE
          FIELDS (employee_number      CHAR(2),
