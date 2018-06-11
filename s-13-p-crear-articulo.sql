@@ -1,7 +1,7 @@
 -- @Autores: López Santibáñez Jiménez, Luis Gerardo
 --          Silva García, Carlos Sebastián
 -- Fecha de creación: 10/06/2018
--- Descripción: Prueba el trigger de backup
+-- Descripción: Prueba el procedimiento de articulo_autor
 
 CREATE OR REPLACE PROCEDURE CREAR_ARTICULO(
     V_ARTICULO_ID IN ARTICULO.ARTICULO_ID%TYPE,
