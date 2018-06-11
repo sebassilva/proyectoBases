@@ -56,4 +56,5 @@ LOOP
   EXECUTE IMMEDIATE 'create synonym xx_' || i.old_name || ' for ' || i.old_name;
 END LOOP;
 END; 
+/
 
