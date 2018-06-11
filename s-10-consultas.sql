@@ -20,7 +20,7 @@ LEFT JOIN EDITOR ED
 ON ED.EMPLEADO_ID = E.EMPLEADO_ID
 LEFT JOIN REVISOR R
 ON E.EMPLEADO_ID = R.EMPLEADO_ID
-WHERE AP_PATERNO LIKE '%S%';
+WHERE AP_PATERNO LIKE '%H%';
 
 
 --selecciona el articulo con la mejor calificación sin tomar en cuenta a los reprobados.
