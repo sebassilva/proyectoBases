@@ -3,6 +3,7 @@
 -- Fecha de creación: 09/06/2018
 -- Descripción: Crea todas las tablas necesarias para el proyecto.
 
+CONNECT LSSG_PROY_ADMIN/LSSG_PROY_ADMIN;
 
 CREATE SEQUENCE seq_by_two
 MINVALUE 2
