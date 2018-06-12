@@ -1,3 +1,8 @@
+-- @Autores: López Santibáñez Jiménez, Luis Gerardo
+--          Silva García, Carlos Sebastián
+-- Fecha de creación: 09/06/2018
+-- Descripción: Crea ua tabla externa partiendo de un archivo csv, podrían ser empleados de una base anterior
+
 CREATE DIRECTORY ext_tab_dir AS '/home/oracle/app';
 CONNECT system/system;
 GRANT READ ON DIRECTORY ext_tab_dir TO LSSG_PROY_ADMIN;
