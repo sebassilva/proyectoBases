@@ -1,3 +1,12 @@
+-- @Autores: López Santibáñez Jiménez, Luis Gerardo
+--          Silva García, Carlos Sebastián
+-- Fecha de creación: 09/06/2018
+-- Descripción: Carga un archivo en pdf_articulo
+
+
+--Es necesario crear el directitio /tmp/data_dir
+--!mkdir /tmp/data_dir
+
 set serveroutput on
 create or replace directory data_dir as '/tmp/data_dir';
 create or replace procedure carga_blob_en_bd (
@@ -17,13 +26,13 @@ v_dest_blob blob;
 v_src_length number;
 v_dest_length number;
 begin
+
+
 --verifica que los nombres de las tablas y columnas sean
 --cadenas validas. Ayuda con la inyección de SQL.
 v_nombre_tabla := dbms_assert.simple_sql_name(v_nombre_tabla);
 v_nombre_col_blob := dbms_assert.simple_sql_name(v_nombre_col_blob);
 v_nombre_col_pk := dbms_assert.simple_sql_name(v_nombre_col_pk);
-
-
 
 v_bfile := bfilename(upper(v_nombre_directorio),v_nombre_archivo);
 if dbms_lob.fileexists(v_bfile) = 1 and not
@@ -83,32 +92,5 @@ end;
 /
 show errors
 
-insert into articulo_pdf(articulo_pdf_id, num_archivo, articulo_id) values (PDF_NUM_ARCHIVO_SEQ.nextval, PDF_NUM_ARCHIVO_SEQ.currval, 1 );
-select * from articulo_pdf;
-commit;
 
 
-declare
-v_longitud number;
-v_nombre_tabla varchar2(30) := 'articulo_pdf';
-v_nombre_col_blob varchar2(30) := 'archivo';
-v_nombre_col_pk varchar2(30) := 'articulo_pdf_id';
-v_nombre_directorio varchar2(30) := 'data_dir';
-v_valor_pk numeric(10,0) := 22;
-v_nombre_archivo varchar2(100) := 'test.pdf';
-begin
-dbms_output.put_line('Cargando BLOB en la BD');
-carga_blob_en_bd(v_nombre_directorio,v_nombre_archivo,
-v_nombre_tabla,v_nombre_col_blob,v_nombre_col_pk,
-v_valor_pk,v_longitud);
-dbms_output.put_line('Listo, bytes escritos: '|| v_longitud);
---hace permanente el cambio
-commit;
-exception
-when others then
-dbms_output.put_line('Error al realizar la carga, se hara rollback');
-dbms_output.put_line( dbms_utility.format_error_backtrace );
-rollback;
-raise;
-end;
-/

@@ -3,7 +3,9 @@
 -- Fecha de creación: 10/06/2018
 -- Descripción: Consultas SQL usando diferentes tipos de join, subconsultas y álgebra relacional
 
---selecciona todos los articulos con sus fechas
+--selecciona todos los articulos que tengan pdf, con sus fechas
+
+CONNECT LSSG_PROY_INVITADO/LSSG_PROY_INVITADO;
 SELECT NUM_ARCHIVO, TITULO, FOLIO, FECHA_STATUS
 FROM ARTICULO
 NATURAL JOIN ARTICULO_PDF
@@ -24,6 +26,7 @@ WHERE AP_PATERNO LIKE '%H%';
 
 
 --selecciona el articulo con la mejor calificación sin tomar en cuenta a los reprobados.
+CONNECT LSSG_PROY_ADMIN/LSSG_PROY_ADMIN;
 
 SELECT Q1.ARTICULO_ID, MAX(Q1.PROM)
 FROM  (
@@ -33,6 +36,10 @@ FROM  (
   HAVING AVG(CALIFICACION) > 5
 )  Q1
 GROUP BY Q1.ARTICULO_ID;
+
+CONNECT LSSG_PROY_INVITADO/LSSG_PROY_INVITADO;
+
+SELECT * FROM ARTICULO_PDF where ARTICULO_PDF_ID = 2;
 
 
 
