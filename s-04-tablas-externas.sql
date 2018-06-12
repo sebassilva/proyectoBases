@@ -1,5 +1,7 @@
 CREATE DIRECTORY ext_tab_dir AS '/home/oracle/app';
-GRANT READ ON DIRECTORY ext_tab_dir TO prueba1;
+CONNECT system/system;
+GRANT READ ON DIRECTORY ext_tab_dir TO LSSG_PROY_ADMIN;
+CONNECT LSSG_PROY_ADMIN/LSSG_PROY_ADMIN;
 
 CREATE TABLE ext_tab (
 empno  CHAR(4),
