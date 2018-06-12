@@ -5,37 +5,30 @@
 
 --Ejecuta el procedimiento
 
-CREATE OR REPLACE PROCEDURE SUBIR_ARCHIVO(
-  P_ARTICULO_ID IN NUMBER
-)
+CREATE OR REPLACE PROCEDURE SUBIR_ARCHIVO
 IS 
 v_longitud number;
 v_nombre_tabla varchar2(30) := 'articulo_pdf';
 v_nombre_col_blob varchar2(30) := 'archivo';
 v_nombre_col_pk varchar2(30) := 'articulo_pdf_id';
 v_nombre_directorio varchar2(30) := 'data_dir';
-v_valor_pk numeric(10,0) := P_ARTICULO_ID;
+v_valor_pk numeric(10,0);
 v_nombre_archivo varchar2(100) := 'test.pdf';
-CURSOR PDF_CUR IS SELECT * FROM ARTICULO_PDF;
+cursor cur_pdf is select * from articulo_pdf; 
 
 begin
+for c in cur_pdf 
+loop
+
 dbms_output.put_line('Cargando BLOB en la BD');
-
-FOR  
-   IN PDF_CUR
-   LOOP
-      DBMS_OUTPUT.put_line (
-         employee_rec.last_name);
-   END LOOP;
-
-
-
-
 carga_blob_en_bd(v_nombre_directorio,v_nombre_archivo,
 v_nombre_tabla,v_nombre_col_blob,v_nombre_col_pk,
-v_valor_pk,v_longitud);
+c.articulo_pdf_id,v_longitud);
 dbms_output.put_line('Listo, bytes escritos: '|| v_longitud);
+
 --hace permanente el cambio
+end loop; 
+
 exception
 when others then
 dbms_output.put_line('Error al realizar la carga, se hara rollback');
@@ -48,6 +41,6 @@ end;
 
 
 BEGIN 
-SUBIR_ARCHIVO(22);
+SUBIR_ARCHIVO();
 END;
 /

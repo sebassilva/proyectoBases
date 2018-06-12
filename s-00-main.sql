@@ -35,19 +35,6 @@ start s-07-sinonimos.sql	;
 start s-08-vistas.sql		   ;
 start s-09-carga-inicial.sql;
 
--- start s-10-consultas.sql;
--- start s-11-tr-actualiza-historico.sql;
--- start s-11-tr-backup-prueba.sql;
--- start s-11-tr-backup.sql;
--- start s-12-tr-actualiza-historico-prueba.sql;
--- start s-13-p-calcula-promedio-prueba.sql;
--- start s-13-p-calcula-promedio.sql;
--- start s-13-p-crear-articulo.sql;
--- start s-14-p-crear-articulo-pueba.sql;
--- start s-15-fx-<nombre-funcion>.sql;
--- start s-15-fx-revisor-editor.sql;
--- start s-16-fx-revisor-editor-prueba.sql;
-
 
 
 
