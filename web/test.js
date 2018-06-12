@@ -71,7 +71,7 @@ app.post('/api/', function(req, res) {
         console.log('response express',response)
         res.json(response);
         response = []
-    }, 250)
+    }, 750)
    
   });
 
@@ -88,7 +88,7 @@ app.post('/api/', function(req, res) {
         console.log('response express',response)
         res.json(response);
         response = []
-    }, 250)
+    }, 750)
    
   });
   app.post('/api/2', function(req, res) {
@@ -110,7 +110,7 @@ app.post('/api/', function(req, res) {
         console.log('response express',response)
         res.json(response);
         response = []
-    }, 250)
+    }, 750)
    
   });
   app.post('/api/3', function(req, res) {
@@ -133,7 +133,7 @@ GROUP BY Q1.ARTICULO_ID
         console.log('response express',response)
         res.json(response);
         response = []
-    }, 250)
+    }, 750)
    
   });
   app.post('/api/4', function(req, res) {
@@ -149,7 +149,7 @@ GROUP BY Q1.ARTICULO_ID
         console.log('response express',response)
         res.json(response);
         response = []
-    }, 250)
+    }, 750)
    
   });
   app.post('/api/5', function(req, res) {

@@ -12,7 +12,9 @@ declare
     V_AUTOR_2 number(2,0) := 2; 
     V_AUTOR_3 number(2,0) := 3;
 begin
-    CREAR_ARTICULO(V_ARTICULO_ID,V_TITULO,V_SINOPSIS,V_AREA_INTERES_ID,V_AUTOR_1,V_AUTOR_2,V_AUTOR_3);
+     INSERT INTO ARTICULO VALUES  (80, 'JJJFJFJFJFJF848484', 'UNA SINOPSIS', 'SINOPSIS',  SYSDATE, 1, 1, 0);
+     
+    --CREAR_ARTICULO(V_ARTICULO_ID,V_TITULO,V_SINOPSIS,V_AREA_INTERES_ID,V_AUTOR_1,V_AUTOR_2,V_AUTOR_3);
     --dbms_output.put_line('Numero de registros: '||v_num_registros);
 end;
 /

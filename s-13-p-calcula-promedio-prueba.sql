@@ -10,3 +10,4 @@ begin
     CALCULA_PROMEDIO(V_ARTICULO_ID);
     --dbms_output.put_line('Numero de registros: '||v_num_registros);
 end;
+/

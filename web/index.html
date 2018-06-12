@@ -179,10 +179,11 @@ a:hover, a:focus, a:active {
         document.getElementById("json").innerHTML = JSON.stringify(data, undefined, 2);
     }
     function call(id){
+	console.log("call id");
         fetch("/api/" + id ,
             {
                 method: "POST",
-                body: {data:'strasd'}
+                body: {'data':'strasd'}
             })
             .then(function(res){ return res.json(); })
             .then(function(data){ 
