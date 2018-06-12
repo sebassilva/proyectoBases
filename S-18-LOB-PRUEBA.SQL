@@ -16,8 +16,21 @@ v_nombre_col_pk varchar2(30) := 'articulo_pdf_id';
 v_nombre_directorio varchar2(30) := 'data_dir';
 v_valor_pk numeric(10,0) := P_ARTICULO_ID;
 v_nombre_archivo varchar2(100) := 'test.pdf';
+CURSOR PDF_CUR IS SELECT * FROM ARTICULO_PDF;
+
 begin
 dbms_output.put_line('Cargando BLOB en la BD');
+
+FOR  
+   IN PDF_CUR
+   LOOP
+      DBMS_OUTPUT.put_line (
+         employee_rec.last_name);
+   END LOOP;
+
+
+
+
 carga_blob_en_bd(v_nombre_directorio,v_nombre_archivo,
 v_nombre_tabla,v_nombre_col_blob,v_nombre_col_pk,
 v_valor_pk,v_longitud);
